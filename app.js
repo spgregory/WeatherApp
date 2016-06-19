@@ -18,9 +18,7 @@ convertTemp(temp);
 });
 
 function getWeather(){
-  console.log(yourZip);
   yourZip = $('#yourZip').val();
-  console.log(yourZip);
    masterUrl= url+yourZip+appId;
   $.getJSON(masterUrl,function(data){
    var me = data;
