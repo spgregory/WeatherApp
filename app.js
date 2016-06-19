@@ -22,7 +22,30 @@ function convertTemp(temp){
    fahrenheit=  (temp - 273.15) * 9/5 + 32
   return fahrenheit;
 }
+
 });
 
+function getWeather(){
+  console.log(yourZip);
+  yourZip = $('#yourZip').val();
+  console.log(yourZip);
+   masterUrl= url+yourZip+appId;
+  $.getJSON(masterUrl,function(data){
+   var me = data;
+   var we = me.weather[0]
+   var main = me.main
+    convertTemp(main.temp)
+     render(me,we,fahrenheit,main)      
+});
+}
 
-
+function convertTemp(temp){
+   fahrenheit=  (temp - 273.15) * 9/5 + 32
+  return fahrenheit;
+}
+function render(me,we,fahrenheit, main){
+$('.city').html(me.name);
+$('.description').html(we.description);
+$('.temp').html('Tempature: '+fahrenheit.toFixed(1));
+$('.humidity').html('Humidity  '+main.humidity+''+'&#37;')
+}
