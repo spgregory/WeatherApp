@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <title>Weather Application</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> 
-    <script src="app.js"></script>
+   
     <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.css">
+     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-static-top">
@@ -15,31 +16,32 @@
   </div>
 </nav>
 <!-- from for zip code -->
-<div class="container-fluid">
+<div class="container box">
     <div class="row">
-<div class="col-md-4"></div>
+<div class="col-md-3"></div>
 <form class="col-md-6" id="myForm" >
     <div class="form-group">
  <label for="yourZip">Your zip code</label>
     <input type="text" id="yourZip">
-    <button type="button" onclick="getWeather()">Click</button>
+    <!--<button type="button" onclick="getWeather()">Click</button>-->
     </div>
-    
+    <div class="col-md-3"></div>
 </form>
 </div>
     <div class="container">
         <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-6">
+            <div class="col-md-3">&nbsp;</div>
+            <div class="col-md-6 main-weather">
         <h1 class="city"></h1>
         <h2 class="description"></h2>
         <h2 class="temp"></h2>
         <h2 class="humidity"></h2>
         </div>
         </div>
+         <div class="col-md-3"></div>
     </div>
 </div>
-<script>
+ <script src="app.js"></script>
 
 </body>
 </html>

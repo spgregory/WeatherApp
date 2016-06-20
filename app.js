@@ -17,6 +17,19 @@ convertTemp(temp);
 
 });
 
+
+
+$( "#yourZip" ).keypress(function(e) {
+   var keycode = (event.keyCode ? event.keyCode : event.which);
+   if ( keycode == '13' ) {
+     e.preventDefault();
+    }   
+ yourZip = $('#yourZip').val();
+ getWeather();
+  
+});
+
+
 function getWeather(){
   yourZip = $('#yourZip').val();
    masterUrl= url+yourZip+appId;

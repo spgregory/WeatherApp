@@ -1,0 +1,17 @@
+.box{
+    border: 1px solid gray;
+}
+.container{
+    width: 600px;
+}
+.row{
+    width:600px;
+}
+.form-group{
+    margin-left: auto;
+    margin-top: 5px;
+}
+.main-weather{
+  margin-left: auto;
+  margin-right: auto;
+}
