@@ -52,7 +52,12 @@ function getForecast(){
   yourZip = $('#yourZip').val();
   masterUrl2= url2+yourZip+count2+appId;
   $.getJSON(masterUrl2,function(data){
-console.log(data);     
+var me = data;
+var we =me.list[0]
+console.log(we.dt);
+var time = moment.unix(we.dt);
+var day =moment(time).format('dddd')
+console.log(day);   
 });
 }
 
