@@ -1,9 +1,12 @@
 var fahrenheit;
 var yourZip = '53403';
 var url ='http://api.openweathermap.org/data/2.5/weather?zip=';
-var url2 = 'http://api.openweathermap.org/data/2.5/forecast?zip=';
-var appId = ',us&appid=5cd72a4d73eadb90efdc70dcdb135c07';
-var masterUrl= url+yourZip+appId;
+var url2 = 'http://api.openweathermap.org/data/2.5/forecast/daily?zip=';
+var appId = '&appid=5cd72a4d73eadb90efdc70dcdb135c07';
+var count = ',us'
+var count2 = ',us&cnt=3';
+var masterUrl= url+yourZip+count+appId;
+var masterUrl2 = url2+yourZip+count2+appId;
 $( document ).ready(function() {
 
 $.getJSON(masterUrl,function(data){
@@ -35,7 +38,7 @@ $( "#yourZip" ).keypress(function(e) {
 
 function getWeather(){
   yourZip = $('#yourZip').val();
-   masterUrl= url+yourZip+appId;
+   masterUrl;
   $.getJSON(masterUrl,function(data){
    var me = data;
    var we = me.weather[0]
@@ -47,8 +50,8 @@ function getWeather(){
 
 function getForecast(){
   yourZip = $('#yourZip').val();
-   masterUrl= url2+yourZip+appId;
-  $.getJSON(masterUrl,function(data){
+  masterUrl2= url2+yourZip+count2+appId;
+  $.getJSON(masterUrl2,function(data){
 console.log(data);     
 });
 }
