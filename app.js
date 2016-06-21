@@ -1,6 +1,7 @@
 var fahrenheit;
 var yourZip = '53403';
 var url ='http://api.openweathermap.org/data/2.5/weather?zip=';
+var url2 = 'http://api.openweathermap.org/data/2.5/forecast?zip=';
 var appId = ',us&appid=5cd72a4d73eadb90efdc70dcdb135c07';
 var masterUrl= url+yourZip+appId;
 $( document ).ready(function() {
@@ -23,10 +24,12 @@ $( "#yourZip" ).keypress(function(e) {
    var keycode = (event.keyCode ? event.keyCode : event.which);
    if ( keycode == '13' ) {
      e.preventDefault();
+      yourZip = $('#yourZip').val();
+       getWeather();
+  getForecast();
     }   
- yourZip = $('#yourZip').val();
- getWeather();
-  
+
+
 });
 
 
@@ -39,6 +42,14 @@ function getWeather(){
    var main = me.main
     convertTemp(main.temp)
      render(me,we,fahrenheit,main)      
+});
+}
+
+function getForecast(){
+  yourZip = $('#yourZip').val();
+   masterUrl= url2+yourZip+appId;
+  $.getJSON(masterUrl,function(data){
+console.log(data);     
 });
 }
 
