@@ -9,20 +9,12 @@ var masterUrl= url+yourZip+count+appId;
 var masterUrl2 = url2+yourZip+count2+appId;
 $( document ).ready(function() {
 
-$.getJSON(masterUrl,function(data){
-   var me = data;
-   var we = me.weather[0]
-   var main = me.main
-    convertTemp(main.temp)
-     render(me,we,fahrenheit,main)      
-});
+getWeather();
+getForecast();
 render();
 convertTemp(temp);
 
 });
-
-getForecast();
-
 
 $( "#yourZip" ).keypress(function(e) {
    var keycode = (event.keyCode ? event.keyCode : event.which);
@@ -38,7 +30,7 @@ $( "#yourZip" ).keypress(function(e) {
 
 
 function getWeather(){
-  yourZip = $('#yourZip').val();
+ // yourZip = $('#yourZip').val();
    masterUrl = url+yourZip+count+appId;
   $.getJSON(masterUrl,function(data){
    var me = data;
@@ -50,7 +42,7 @@ function getWeather(){
 }
 
 function getForecast(){
-  yourZip = $('#yourZip').val();
+ // yourZip = $('#yourZip').val(); 
   masterUrl2= url2+yourZip+count2+appId;
   $.getJSON(masterUrl2,function(data){
 var me = data;

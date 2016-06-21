@@ -17,52 +17,67 @@
   </div>
 </nav>
 <!-- from for zip code -->
-<div class="container box">
-    <div class="row">
+<div class="col-md-12">
 <div class="col-md-3"></div>
+<div class=" box col-md-6 ">
+    <div class="row">
+  <div class="col-md-3"></div>
 <form class="col-md-6" id="myForm" >
     <div class="form-group">
  <label for="yourZip">Your zip code</label>
     <input type="text" id="yourZip">
-    <!--<button type="button" onclick="getWeather()">Click</button>-->
     </div>
-    <div class="col-md-3"></div>
+    <!--end of of form group div-->
 </form>
-</div>
-    <div class="container">
+  <div class="col-md-3"></div>
+    </div>
+    <!--end of row div-->
+
         <div class="row">
-            <div class="col-md-3">&nbsp;</div>
+            <div class="col-md-4"></div>
             <div class="col-md-6 main-weather">
         <h1 class="city"></h1>
         <h2 class="description"></h2>
         <h2 class="temp"></h2>
         <h2 class="humidity"></h2>
         </div>
+        <div class="col-md-2"></div>
+        <!--end of main weather div-->
         </div>
-         <div class="col-md-3"></div>
-    </div>
- 
+        <!--end of row div-->
+        <div class="col-md-3"></div>
+  
 </div>
-   <div class="container box row">
-       <div id="0">
+<!--End of 12 columns-->
+
+<div class="col-md-12 forecast">
+<div class="col-md-3"></div>
+   <div class=" box col-md-6">
+       <div class="row">
+       <div id="0" class="col-md-4">
            <h1 class="day"></h1>
          <h2 class="description"></h2>
            <h2 class="maxTemp"></h2>
-           <h2 class="humidity"></h2>
+        
        </div>
-       <div id="1">
-           <h1 class="day"></h1>
-                 <h2 class="description"></h2>
-            <h2 class="maxTemp"></h2>
-             <h2 class="humidity"></h2>
+       <div id="1" class="col-md-4">
+       <h1 class="day"></h1>
+       <h2 class="description"></h2>
+       <h2 class="maxTemp"></h2>
+          
        </div>
-       <div id="2">
+       <div id="2" class="col-md-4">
            <h1 class="day"></h1>
             <h2 class="description"></h2>
             <h2 class="maxTemp"></h2>
-             <h2 class="humidity"></h2>
+          
+       </div>
        </div>
     </div>
+    <div class="col-lg-3"></div>
+
+</div>
+<!--End of 12 col div-->
  <script src="app.js"></script>
 
 </body>
