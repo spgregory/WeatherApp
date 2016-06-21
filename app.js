@@ -53,12 +53,11 @@ function getForecast(){
   masterUrl2= url2+yourZip+count2+appId;
   $.getJSON(masterUrl2,function(data){
 var me = data;
-for(x in me.list){
+for(x = 0; x<3; x++){
 var we =me.list[x]
-console.log(we.dt);
 var time = moment.unix(we.dt);
 var day =moment(time).format('dddd')
-console.log(day);  
+$("#" + x).html(day)
 } 
 });
 }
