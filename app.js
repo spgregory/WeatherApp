@@ -21,6 +21,7 @@ convertTemp(temp);
 
 });
 
+getForecast();
 
 
 $( "#yourZip" ).keypress(function(e) {
@@ -38,7 +39,7 @@ $( "#yourZip" ).keypress(function(e) {
 
 function getWeather(){
   yourZip = $('#yourZip').val();
-   masterUrl;
+   masterUrl = url+yourZip+count+appId;
   $.getJSON(masterUrl,function(data){
    var me = data;
    var we = me.weather[0]
@@ -55,16 +56,23 @@ function getForecast(){
 var me = data;
 for(x = 0; x<3; x++){
 var we =me.list[x]
+var temp = we.temp;
+var weather = we.weather[0];
+var maxTemp = temp.max;
+var getMaxTemp = convertTemp(maxTemp);
 var time = moment.unix(we.dt);
-var day =moment(time).format('dddd')
-$("#" + x).html(day)
+var day =moment(time).format('dddd');
+$("#" + x+">h1.day").html(day);
+$("#" + x+">h2.maxTemp").html('Max Tempature: '+getMaxTemp);
+$("#" + x+">h2.humidity").html('Wind: '+we.speed );
+$("#" + x+">h2.description").html(weather.description );
 } 
 });
 }
 
 function convertTemp(temp){
    fahrenheit=  (temp - 273.15) * 9/5 + 32
-  return fahrenheit;
+  return fahrenheit.toFixed(1);
 }
 function render(me,we,fahrenheit, main){
 $('.city').html(me.name);
